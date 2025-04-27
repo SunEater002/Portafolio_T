@@ -45,3 +45,88 @@ main section p {
 footer {
   @apply text-center py-4 bg-gray-800 text-white rounded-lg;
 }
+
+
+/* Estilos base para los artículos de proyecto */
+.proyecto-blog,
+.proyecto-video,
+.proyecto-pasteleria,
+.proyecto-boneless {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pseudo-elemento para la imagen de hover */
+.proyecto-blog::before,
+.proyecto-video::before,
+.proyecto-pasteleria::before,
+.proyecto-boneless::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Imagen de fondo normal (por defecto) */
+.proyecto-blog {
+  background-image: url('/img/blog.jpg');
+}
+.proyecto-video {
+  background-image: url('/img/video_player.jpg');
+}
+.proyecto-pasteleria {
+  background-image: url('/img/pasteleria.jpg');
+}
+.proyecto-boneless {
+  background-image: url('/img/boneless.jpg');
+}
+
+/* Imagen de fondo al hacer hover (pseudo-elemento visible) */
+.proyecto-blog:hover::before {
+  opacity: 1;
+  background-image: url('/img/blogg-hover.jpg');
+}
+.proyecto-video:hover::before {
+  opacity: 1;
+  background-image: url('/img/video_hover.jpg');
+}
+.proyecto-pasteleria:hover::before {
+  opacity: 1;
+  background-image: url('/img/pasteleria-hover.jpg');
+}
+.proyecto-boneless:hover::before {
+  opacity: 1;
+  background-image: url('/img/boneless-hover.jpg');
+}
+
+/* Asegura que el contenido esté por encima del pseudo-elemento */
+.proyecto-blog > *,
+.proyecto-video > *,
+.proyecto-pasteleria > *,
+.proyecto-boneless > * {
+  position: relative;
+  z-index: 2;
+}
+
+#contactame {
+  position: relative;
+  overflow: hidden;
+}
+#contactame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* Ajusta la opacidad aquí */
+  border-radius: 0.75rem; /* Igual que rounded-xl */
+  z-index: 1;
+  pointer-events: none;
+}
+#contactame > * {
+  position: relative;
+  z-index: 2;
+}
