@@ -77,7 +77,7 @@ footer {
   background-image: url('/img/blog.jpg');
 }
 .proyecto-video {
-  background-image: url('/img/video_player.jpg');
+  background-image: url('/img/vega1.jpg');
 }
 .proyecto-pasteleria {
   background-image: url('/img/pasteleria.jpg');
@@ -93,7 +93,7 @@ footer {
 }
 .proyecto-video:hover::before {
   opacity: 1;
-  background-image: url('/img/video_hover.jpg');
+  background-image: url('/img/vega_hover.jpg');
 }
 .proyecto-pasteleria:hover::before {
   opacity: 1;
